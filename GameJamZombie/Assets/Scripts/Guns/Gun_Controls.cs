@@ -15,8 +15,8 @@ public class Gun_Controls : MonoBehaviour {
     [SerializeField]
     float gun_cooldown;
     float gun_fireRate;
-    int gun_magazine;
-    int gun_reserve;
+    public int gun_magazine;
+    public int gun_reserve;
     float gun_damage;
     void Start()
     {

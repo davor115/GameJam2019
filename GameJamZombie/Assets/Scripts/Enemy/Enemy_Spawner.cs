@@ -9,9 +9,9 @@ public class Enemy_Spawner : MonoBehaviour {
 
     public GameObject[] ZombiePrefabs; // Index 1: Normal, 2: Fast, 3: Tank
 
-    bool FirstFloor;
-    bool SecondFloor;
-    bool ThirdFloor;
+    public bool FirstFloor;
+    public bool SecondFloor;
+    public bool ThirdFloor;
 
     public bool spawning;
 
@@ -49,7 +49,7 @@ public class Enemy_Spawner : MonoBehaviour {
             {
                 if (importantCooldown <= 0)
                 {
-                    Debug.Log("Spawn!");
+                 //   Debug.Log("Spawn!");
                     Instantiate(ZombiePrefabs[0], Main_Spawner[0].transform.position, Quaternion.identity);
                     zombiecount -= 1;
                     importantCooldown = 4.0f;
@@ -61,7 +61,7 @@ public class Enemy_Spawner : MonoBehaviour {
 
                 if (smallCooldown <= 0)
                 {
-                    Debug.Log("Spawn!");
+                  //  Debug.Log("Spawn!");
                     int r = Random.Range(0, 1);
                     Instantiate(ZombiePrefabs[0], Small_Spawner[r].transform.position, Quaternion.identity);
                     zombiecount -= 1;
@@ -76,13 +76,12 @@ public class Enemy_Spawner : MonoBehaviour {
 
        }
        else if(SecondFloor)
-       {
-            Instantiate(ZombiePrefabs[0], Main_Spawner[1].transform.position, Quaternion.identity);
+       {          
             if (zombiecount > 0)
             {
                 if (importantCooldown <= 0)
                 {
-                    Debug.Log("Spawn!");
+                   // Debug.Log("Spawn!");
                     Instantiate(ZombiePrefabs[0], Main_Spawner[1].transform.position, Quaternion.identity);
                     zombiecount -= 1;
                     importantCooldown = 4.0f;
@@ -94,7 +93,7 @@ public class Enemy_Spawner : MonoBehaviour {
 
                 if (smallCooldown <= 0)
                 {
-                    Debug.Log("Spawn!");
+                  //  Debug.Log("Spawn!");
                     int r = Random.Range(2, 3);
                     Instantiate(ZombiePrefabs[0], Small_Spawner[r].transform.position, Quaternion.identity);
                     zombiecount -= 1;
@@ -107,13 +106,12 @@ public class Enemy_Spawner : MonoBehaviour {
             }
         }
        else if(ThirdFloor)
-       {
-            Instantiate(ZombiePrefabs[0], Main_Spawner[2].transform.position, Quaternion.identity);
+       {           
             if (zombiecount > 0)
             {
                 if (importantCooldown <= 0)
                 {
-                    Debug.Log("Spawn!");
+                   // Debug.Log("Spawn!");
                     Instantiate(ZombiePrefabs[0], Main_Spawner[2].transform.position, Quaternion.identity);
                     zombiecount -= 1;
                     importantCooldown = 4.0f;
@@ -125,7 +123,7 @@ public class Enemy_Spawner : MonoBehaviour {
 
                 if (smallCooldown <= 0)
                 {
-                    Debug.Log("Spawn!");
+                 //   Debug.Log("Spawn!");
                     int r = Random.Range(4, 5);
                     Instantiate(ZombiePrefabs[0], Small_Spawner[r].transform.position, Quaternion.identity);
                     zombiecount -= 1;

@@ -25,7 +25,7 @@ public class Camera_Follow : MonoBehaviour {
        if(changingScene)
         {
             // transform.position = new Vector3(transform.position.x, transform.position.y, Player.transform.position.z);
-            Vector3 move = new Vector3(transform.position.x, transform.position.y, Player.transform.position.z);
+            Vector3 move = new Vector3(transform.position.x, Player.transform.position.y + 1f, Player.transform.position.z);
             transform.position = Vector3.MoveTowards(transform.position, move, Time.deltaTime * 3.5f); // Speed of the movement
         }
     }

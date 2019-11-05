@@ -23,7 +23,7 @@ public class Movement : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-
+        Camera.main.GetComponent<Camera_Follow>().changingScene = true;
         // Get components:
         p_rigidbody = this.gameObject.GetComponent<Rigidbody>();
         
@@ -45,12 +45,12 @@ public class Movement : MonoBehaviour {
         if(Input.GetKey(KeyCode.A))
         {
             // Move left
-            transform.Translate(-Vector3.right * mov_speed * Time.deltaTime);
+            transform.Translate(transform.forward * mov_speed * Time.deltaTime);
         }
         if(Input.GetKey(KeyCode.D))
         {
             // Move right
-            transform.Translate(Vector3.right * mov_speed * Time.deltaTime);
+            transform.Translate(-transform.forward * mov_speed * Time.deltaTime);
         }
         if((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && isOnGround) // && isOnGround
         {
