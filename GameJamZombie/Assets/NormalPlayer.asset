@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: NormalPlayer
   m_EditorClassIdentifier: 
   player_health: 100
-  player_mov_speed: 2.5
+  player_mov_speed: 1.5
   player_weight: 0

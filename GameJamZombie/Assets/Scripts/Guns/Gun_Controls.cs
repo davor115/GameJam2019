@@ -12,6 +12,9 @@ public class Gun_Controls : MonoBehaviour {
 
     public Gun pickedGun;
 
+    public GameObject _BulletPrefab;
+
+
     [SerializeField]
     float gun_cooldown;
     float gun_fireRate;
@@ -34,9 +37,9 @@ public class Gun_Controls : MonoBehaviour {
     void Update()
     {
         PlayerGunControlls();
-       // Debug.Log("Magazine: " + gun_magazine);
-      //  Debug.Log("Reserve: " + gun_reserve);
-        
+        // Debug.Log("Magazine: " + gun_magazine);
+        //  Debug.Log("Reserve: " + gun_reserve);
+        Debug.DrawRay(transform.position, transform.forward * 15.0f);
     }
 
     //void OnDrawGizmosSelected()
@@ -71,14 +74,22 @@ public class Gun_Controls : MonoBehaviour {
         {
             // Get the point along the ray that hits the calculated distance.
             Vector3 targetPoint = ray.GetPoint(hitdist);
+            Debug.Log("Target Point: " + targetPoint);
 
             // Determine the target rotation.  This is the rotation if the transform looks at the target point.
             Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
-
+            Quaternion targetRotation2 = Quaternion.LookRotation(new Vector3(targetPoint.x, Player.transform.position.y, targetPoint.z) - Player.transform.position);
+      
             // Smoothly rotate towards the target point.
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
+            Player.transform.rotation = Quaternion.Lerp(Player.transform.rotation, targetRotation2, speed * Time.deltaTime);
         }
     }
+    float AngleBetweenPoints(Vector3 a, Vector3 b)
+    {
+        return Mathf.Atan2(a.x - b.x, a.z - b.z) * Mathf.Rad2Deg;
+    }
+
 
 
     void PlayerGunControlls()
@@ -112,8 +123,12 @@ public class Gun_Controls : MonoBehaviour {
                 currentHitDistance = hit.distance;
                 if (hit.collider.CompareTag("Enemy"))
                 {
-                    hit.collider.gameObject.GetComponent<Renderer>().material.color = Color.red;
-                    hit.collider.gameObject.GetComponent<EnemyBaseActions>().TakeDamage(gun_damage);
+                   // hit.collider.gameObject.GetComponent<Renderer>().material.color = Color.red;
+                    if(hit.collider.gameObject.GetComponent<EnemyBaseActions>().ImOnScreen)
+                    {
+                        Instantiate(_BulletPrefab, hit.collider.transform.position, Quaternion.identity);
+                        hit.collider.gameObject.GetComponent<EnemyBaseActions>().TakeDamage(gun_damage);
+                    }                   
                 }
             }
 
@@ -144,6 +159,5 @@ public class Gun_Controls : MonoBehaviour {
             }
         }
     }
-
 
 }

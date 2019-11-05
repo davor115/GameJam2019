@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour {
 
     public Player playerClass;
-
+    PlayerAnimations p_anim;
     Rigidbody p_rigidbody;
     public Collider[] allColliders;
     public LayerMask LayerMask;
@@ -26,7 +26,7 @@ public class Movement : MonoBehaviour {
         Camera.main.GetComponent<Camera_Follow>().changingScene = true;
         // Get components:
         p_rigidbody = this.gameObject.GetComponent<Rigidbody>();
-        
+        p_anim = this.gameObject.GetComponent<PlayerAnimations>();
         // Initialize stats:
         mov_speed = playerClass.player_mov_speed; // make = GetClass().GetSpeed(); Later..
         p_health = playerClass.player_health;        
@@ -37,7 +37,8 @@ public class Movement : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        Controls();        
+        Controls();
+
 	}
 
     void  Controls()
@@ -45,27 +46,39 @@ public class Movement : MonoBehaviour {
         if(Input.GetKey(KeyCode.A))
         {
             // Move left
-            transform.Translate(transform.forward * mov_speed * Time.deltaTime);
+            transform.Translate(-transform.forward * mov_speed * Time.deltaTime);
+            p_anim.WalkBackwards();
         }
         if(Input.GetKey(KeyCode.D))
         {
             // Move right
-            transform.Translate(-transform.forward * mov_speed * Time.deltaTime);
+            transform.Translate(transform.forward * mov_speed * Time.deltaTime);
+            p_anim.Walking();
         }
-        if((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && isOnGround) // && isOnGround
+        if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
-            // Jump
-            p_rigidbody.AddForce(Vector3.up * mov_jumpDistance, ForceMode.Impulse);
+            p_anim.Idle();
         }
+        //if((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && isOnGround) // && isOnGround
+        //{
+        //    // Jump
+        //    p_rigidbody.AddForce(Vector3.up * mov_jumpDistance, ForceMode.Impulse);
+        //}
         
     }
+
+
+
+ 
+
+
 
     void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.CompareTag("Floor"))
         {
             isOnGround = true;
-            Debug.Log("Collided with the ground");
+        //    Debug.Log("Collided with the ground");
         }
     }
 
@@ -74,7 +87,7 @@ public class Movement : MonoBehaviour {
         if(other.gameObject.CompareTag("Floor"))
         {
             isOnGround = false;
-            Debug.Log("In the AIR!");
+         //   Debug.Log("In the AIR!");
         }
        
     }

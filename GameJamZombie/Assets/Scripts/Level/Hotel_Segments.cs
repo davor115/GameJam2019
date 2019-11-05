@@ -51,6 +51,10 @@ public class Hotel_Segments : MonoBehaviour {
         else if(other.gameObject.name == "Stage_Finished_3")
         {
             // Play exiting the building animation, Fade out, load next scene.
+            if(p.GetComponent<Movement>().killCount >= 24)
+            {
+                // Load new Scene.
+            }
         }
     }
 

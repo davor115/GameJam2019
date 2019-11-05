@@ -8,6 +8,8 @@ public class EnemyBaseActions : MonoBehaviour {
     public Enemy enemy;
     NavMeshAgent agent;
 
+    public bool ImOnScreen;
+
     public float health;
     public float mov_speed;
     float attack_speed;
@@ -15,6 +17,7 @@ public class EnemyBaseActions : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        ImOnScreen = false;
         Player = GameObject.FindGameObjectWithTag("Player");
         health = enemy.enemy_health;
         mov_speed = enemy.enemy_mov_speed;
@@ -34,7 +37,7 @@ public class EnemyBaseActions : MonoBehaviour {
 
     void Walk()
     {
-        if (Vector3.Distance(Player.transform.position, transform.position) > 4.0f)
+        if (Vector3.Distance(Player.transform.position, transform.position) > 1.5f)
         {
             // transform.LookAt(Player.transform);
             // transform.Translate(Vector3.forward * Time.deltaTime * mov_speed);
@@ -74,8 +77,13 @@ public class EnemyBaseActions : MonoBehaviour {
         bool onScreen = screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1; // We check if the zombie is in the screen.
         if (onScreen) // If the zombie is not on the screen..
         {
+            ImOnScreen = true;
             //  transform.position = new Vector3(Player.transform.position.x, transform.position.y, transform.position.z); // Allocate so it has the same position.
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(Player.transform.position.x, transform.position.y, transform.position.z), Time.deltaTime * mov_speed);
+        }
+        else
+        {
+            ImOnScreen = false;
         }
         yield return new WaitForSeconds(5.0f); // Run this Co routine every 5 seconds..
     }
