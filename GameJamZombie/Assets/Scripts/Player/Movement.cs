@@ -18,7 +18,7 @@ public class Movement : MonoBehaviour {
 
     [SerializeField]
     bool isOnGround;
-    float p_health;
+    public float p_health;
     public int killCount;
 	// Use this for initialization
 	void Start ()
