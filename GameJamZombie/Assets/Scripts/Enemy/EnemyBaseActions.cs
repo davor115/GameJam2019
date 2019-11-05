@@ -42,7 +42,7 @@ public class EnemyBaseActions : MonoBehaviour {
 
     void Walk()
     {
-        if (Vector3.Distance(Player.transform.position, transform.position) > 1.5f && health > 0)
+        if (Vector3.Distance(Player.transform.position, transform.position) > 1.5f)
         {
             // transform.LookAt(Player.transform);
             // transform.Translate(Vector3.forward * Time.deltaTime * mov_speed);
@@ -53,9 +53,10 @@ public class EnemyBaseActions : MonoBehaviour {
         }
         else
         {
-            if (attack_cooldown <= 0)
+            if (attack_cooldown <= 0 && isAlive)
             {
                 Player.GetComponent<Movement>().take_damage(5.0f);
+                Debug.Log("Attacking..");
                 zombieAnim.ZombieAttack();
                 attack_cooldown = attack_speed;
             }
@@ -75,12 +76,12 @@ public class EnemyBaseActions : MonoBehaviour {
         if(health <= 0 && isAlive)
         {
             isAlive = false;
+            Debug.Log("I died");
             Player.GetComponent<Movement>().killCount += 1;
-            agent.ResetPath();
-            zombieAnim.ZombieDie();
             this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
             this.gameObject.GetComponent<NavMeshAgent>().enabled = false;
             this.gameObject.GetComponent<EnemyBaseActions>().enabled = false;
+            zombieAnim.ZombieDie();          
             if (dieWait <= 0)
             {
                 Destroy(this.gameObject);

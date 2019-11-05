@@ -74,7 +74,7 @@ public class Gun_Controls : MonoBehaviour {
         {
             // Get the point along the ray that hits the calculated distance.
             Vector3 targetPoint = ray.GetPoint(hitdist);
-            Debug.Log("Target Point: " + targetPoint);
+          //  Debug.Log("Target Point: " + targetPoint);
 
             // Determine the target rotation.  This is the rotation if the transform looks at the target point.
             Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
