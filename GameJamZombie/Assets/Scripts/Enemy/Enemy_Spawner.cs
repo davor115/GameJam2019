@@ -29,14 +29,15 @@ public class Enemy_Spawner : MonoBehaviour {
 	void Start ()
     {
         spawning = true;
+        Hotel = false;
         Scene scene = SceneManager.GetActiveScene();
         if (scene.name == "Hotel")
         {
-            Hotel = true;
-            importantCooldown = 4.0f;
-            smallCooldown = 7.0f;
-            zombiecount = 24;
+            Hotel = true;          
         }
+        importantCooldown = 4.0f;
+        smallCooldown = 7.0f;
+        zombiecount = 24;
 
         FirstFloor = true;
         SecondFloor = false;
@@ -55,7 +56,7 @@ public class Enemy_Spawner : MonoBehaviour {
             CityWorld();
         }
     }
-
+    
     void Spawn()
     {
        if(FirstFloor)

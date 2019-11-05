@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour {
 
     public Player playerClass;
@@ -43,17 +43,64 @@ public class Movement : MonoBehaviour {
 
     void  Controls()
     {
-        if(Input.GetKey(KeyCode.A))
+
+        Debug.Log("Current Rotation: " + transform.rotation.y);
+        if (Input.GetKey(KeyCode.A))
         {
             // Move left
-            transform.Translate(-transform.forward * mov_speed * Time.deltaTime);
-            p_anim.WalkBackwards();
+            Scene scene = SceneManager.GetActiveScene();
+            if (scene.name == "Hotel")
+            {
+                transform.Translate(-transform.forward * mov_speed * Time.deltaTime);
+               
+            }
+            else
+            {
+                transform.Translate(-transform.right * mov_speed * Time.deltaTime);
+                
+            }
+           
+
+            if (transform.rotation.y <= 0.5f && transform.rotation.y >= -0.5f)
+            {
+                Debug.Log("Walking normal");
+                
+                p_anim.WalkBackwards();
+
+            }
+            else
+            {
+                Debug.Log("Walking backwards");
+                p_anim.Walking();
+            }
+            
+            
+           
         }
         if(Input.GetKey(KeyCode.D))
         {
             // Move right
-            transform.Translate(transform.forward * mov_speed * Time.deltaTime);
-            p_anim.Walking();
+            Scene scene = SceneManager.GetActiveScene();
+            if (scene.name == "Hotel")
+            {
+                transform.Translate(transform.forward * mov_speed * Time.deltaTime);
+            }
+            else
+            {
+                transform.Translate(transform.right * mov_speed * Time.deltaTime);
+            }
+
+            if (transform.rotation.y <= 0.5f && transform.rotation.y >= -0.5f)
+            {
+                p_anim.Walking();
+            }
+            else
+            {
+               
+                p_anim.WalkBackwards();
+
+            }
+           
         }
         if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {

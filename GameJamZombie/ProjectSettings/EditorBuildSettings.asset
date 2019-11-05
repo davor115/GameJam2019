@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Level/Hotel/Hotel.unity
+    guid: 39cbf91983f96614b867f44432c96a0a
+  - enabled: 1
+    path: Assets/City_Level.unity
+    guid: c4c9ee5fc499c454db71aced2c70f171
