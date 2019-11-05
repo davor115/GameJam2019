@@ -5,7 +5,8 @@ using UnityEngine;
 public class Gun_Controls : MonoBehaviour {
 
     GameObject Player;
-
+    float currentHitDistance;
+    public LayerMask LayerMask;
     // speed is the rate at which the object will rotate
     float speed;
 
@@ -33,11 +34,18 @@ public class Gun_Controls : MonoBehaviour {
     void Update()
     {
         PlayerGunControlls();
-        Debug.Log("Magazine: " + gun_magazine);
-        Debug.Log("Reserve: " + gun_reserve);
-        Debug.DrawRay(transform.position, transform.forward * 5.0f);
+       // Debug.Log("Magazine: " + gun_magazine);
+      //  Debug.Log("Reserve: " + gun_reserve);
+        
     }
 
+    //void OnDrawGizmosSelected()
+    //{
+    //    // Draw a yellow sphere at the transform's position
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawLine(transform.position, transform.position + transform.forward * currentHitDistance);
+    //    Gizmos.DrawWireSphere(transform.position + transform.forward * currentHitDistance, 2.5f);
+    //}
 
     void FixedUpdate()
     {
@@ -97,14 +105,15 @@ public class Gun_Controls : MonoBehaviour {
             Ray myRay = new Ray(transform.position, transform.forward);
 
             RaycastHit hit;
-
-            if (Physics.Raycast(myRay, out hit, 30f))
+            // Physics.SphereCast(transform.position, 2.5f, transform.forward, out hit, 30.0f)
+            if (Physics.Raycast(myRay, out hit, 15.0f, LayerMask))
             {
+                Debug.Log("We hit: " + hit.collider.name);
+                currentHitDistance = hit.distance;
                 if (hit.collider.CompareTag("Enemy"))
                 {
                     hit.collider.gameObject.GetComponent<Renderer>().material.color = Color.red;
                     hit.collider.gameObject.GetComponent<EnemyBaseActions>().TakeDamage(gun_damage);
-                    Debug.Log("We hit the enemy");
                 }
             }
 

@@ -10,5 +10,4 @@ public class Player : ScriptableObject {
     public float player_weight;
 
 
-
 }

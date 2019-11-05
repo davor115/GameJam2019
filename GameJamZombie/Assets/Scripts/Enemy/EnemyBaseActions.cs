@@ -29,16 +29,16 @@ public class EnemyBaseActions : MonoBehaviour {
         // If not attacking, walk..
         // Dectect player inmediatly and walk towards him.. no idle animation
         Walk();
-        checkHealth();
-
+        checkHealth();       
     }
 
     void Walk()
     {
-        if (Vector3.Distance(Player.transform.position, transform.position) > 2.0f)
+        if (Vector3.Distance(Player.transform.position, transform.position) > 4.0f)
         {
             // transform.LookAt(Player.transform);
             // transform.Translate(Vector3.forward * Time.deltaTime * mov_speed);
+            StartCoroutine(Check());
             agent.SetDestination(Player.transform.position);
            
         }
@@ -49,7 +49,7 @@ public class EnemyBaseActions : MonoBehaviour {
                 Player.GetComponent<Movement>().take_damage(15.0f);
                 attack_cooldown = attack_speed;
             }
-            agent.isStopped = true;
+            agent.ResetPath();
         }
         attack_cooldown -= Time.deltaTime;
     }
@@ -63,8 +63,21 @@ public class EnemyBaseActions : MonoBehaviour {
     {
         if(health <= 0)
         {
+            Player.GetComponent<Movement>().killCount += 1;
             Destroy(this.gameObject);
         }
+    }
+
+    IEnumerator Check()
+    {
+        Vector3 screenPoint = Camera.main.WorldToViewportPoint(transform.position); // get the position of the zombie and transform it to view port point.
+        bool onScreen = screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1; // We check if the zombie is in the screen.
+        if (onScreen) // If the zombie is not on the screen..
+        {
+            //  transform.position = new Vector3(Player.transform.position.x, transform.position.y, transform.position.z); // Allocate so it has the same position.
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(Player.transform.position.x, transform.position.y, transform.position.z), Time.deltaTime * mov_speed);
+        }
+        yield return new WaitForSeconds(5.0f); // Run this Co routine every 5 seconds..
     }
 
 

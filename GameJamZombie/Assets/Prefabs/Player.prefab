@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 114570758471353782}
   - component: {fileID: 54358574225502852}
   - component: {fileID: 114350209093429748}
+  - component: {fileID: 114755895240160204}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -173,8 +174,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 120
-  m_CollisionDetection: 0
+  m_Constraints: 112
+  m_CollisionDetection: 1
 --- !u!95 &95065707327100738
 Animator:
   serializedVersion: 3
@@ -225,6 +226,18 @@ MonoBehaviour:
     m_Bits: 4294967291
   mov_speed: 0
   isOnGround: 0
+  killCount: 0
+--- !u!114 &114755895240160204
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1863294949729842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e699159aa3020e842a4573e189181c1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114843675990595304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -236,6 +249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753080caaaef10e4c82f66a91556b49d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967291
   pickedGun: {fileID: 11400000, guid: 5d2fdbb19478ef64d90335bf39fdfd8c, type: 2}
   gun_cooldown: 0
 --- !u!136 &136355820291759310

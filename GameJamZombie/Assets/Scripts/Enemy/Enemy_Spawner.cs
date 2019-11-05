@@ -15,7 +15,7 @@ public class Enemy_Spawner : MonoBehaviour {
 
     public bool spawning;
 
-    int zombiecount;
+    public int zombiecount;
     public float importantCooldown;
     float smallCooldown;
 	// Use this for initialization
@@ -38,10 +38,10 @@ public class Enemy_Spawner : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        SpawnImportant();
+        Spawn();
     }
 
-    void SpawnImportant()
+    void Spawn()
     {
        if(FirstFloor)
        {
@@ -62,7 +62,7 @@ public class Enemy_Spawner : MonoBehaviour {
                 if (smallCooldown <= 0)
                 {
                     Debug.Log("Spawn!");
-                    int r = Random.Range(0, Small_Spawner.Length);
+                    int r = Random.Range(0, 1);
                     Instantiate(ZombiePrefabs[0], Small_Spawner[r].transform.position, Quaternion.identity);
                     zombiecount -= 1;
                     smallCooldown = 7.0f;
@@ -95,7 +95,7 @@ public class Enemy_Spawner : MonoBehaviour {
                 if (smallCooldown <= 0)
                 {
                     Debug.Log("Spawn!");
-                    int r = Random.Range(0, Small_Spawner.Length);
+                    int r = Random.Range(2, 3);
                     Instantiate(ZombiePrefabs[0], Small_Spawner[r].transform.position, Quaternion.identity);
                     zombiecount -= 1;
                     smallCooldown = 7.0f;
@@ -126,7 +126,7 @@ public class Enemy_Spawner : MonoBehaviour {
                 if (smallCooldown <= 0)
                 {
                     Debug.Log("Spawn!");
-                    int r = Random.Range(0, Small_Spawner.Length);
+                    int r = Random.Range(4, 5);
                     Instantiate(ZombiePrefabs[0], Small_Spawner[r].transform.position, Quaternion.identity);
                     zombiecount -= 1;
                     smallCooldown = 7.0f;

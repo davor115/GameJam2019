@@ -19,7 +19,7 @@ public class Movement : MonoBehaviour {
     [SerializeField]
     bool isOnGround;
     float p_health;
-
+    public int killCount;
 	// Use this for initialization
 	void Start ()
     {
@@ -31,7 +31,7 @@ public class Movement : MonoBehaviour {
         mov_speed = playerClass.player_mov_speed; // make = GetClass().GetSpeed(); Later..
         p_health = playerClass.player_health;        
         mov_jumpDistance = 2.5f - playerClass.player_weight; // make = GetClass().GetJumpDistance();
-
+        killCount = 0;
     }
 	
 	// Update is called once per frame
