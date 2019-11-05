@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: 749b134bf267a394c9b4910ccf4d087f
+timeCreated: 1572979982
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Apartment_Block_01
+    100002: Apartment_Block_02
+    100004: Apartment_Block_03
+    100006: Apartment_Block_04
+    100008: Apartment_Block_05
+    100010: //RootNode
+    100012: Fire_Escape_01
+    100014: Fire_Escape_02
+    100016: Fire_Escape_03
+    100018: Fire_Escape_04
+    100020: Fire_Escape_05
+    100022: Fire_Escape_06
+    100024: Fish_Chip_Shop
+    100026: Ground
+    100028: Hotel
+    100030: Market
+    100032: Restaurant
+    100034: Stage_Plane_01
+    100036: Stage_Plane_02
+    100038: Stage_Plane_03
+    100040: Train_Station
+    400000: Apartment_Block_01
+    400002: Apartment_Block_02
+    400004: Apartment_Block_03
+    400006: Apartment_Block_04
+    400008: Apartment_Block_05
+    400010: //RootNode
+    400012: Fire_Escape_01
+    400014: Fire_Escape_02
+    400016: Fire_Escape_03
+    400018: Fire_Escape_04
+    400020: Fire_Escape_05
+    400022: Fire_Escape_06
+    400024: Fish_Chip_Shop
+    400026: Ground
+    400028: Hotel
+    400030: Market
+    400032: Restaurant
+    400034: Stage_Plane_01
+    400036: Stage_Plane_02
+    400038: Stage_Plane_03
+    400040: Train_Station
+    2100000: StagePlane
+    2100002: GroundTex
+    2100004: AppartmentBlock
+    2100006: FireEscape
+    2100008: Hotel1
+    2100010: Market1
+    2100012: Restaurant1
+    2100014: FishChipShop
+    2100016: AptBuild2
+    2100018: TrainStation
+    2300000: Apartment_Block_01
+    2300002: Apartment_Block_02
+    2300004: Apartment_Block_03
+    2300006: Apartment_Block_04
+    2300008: Apartment_Block_05
+    2300010: Fire_Escape_01
+    2300012: Fire_Escape_02
+    2300014: Fire_Escape_03
+    2300016: Fire_Escape_04
+    2300018: Fire_Escape_05
+    2300020: Fire_Escape_06
+    2300022: Fish_Chip_Shop
+    2300024: Ground
+    2300026: Hotel
+    2300028: Market
+    2300030: Restaurant
+    2300032: Stage_Plane_01
+    2300034: Stage_Plane_02
+    2300036: Stage_Plane_03
+    2300038: Train_Station
+    3300000: Apartment_Block_01
+    3300002: Apartment_Block_02
+    3300004: Apartment_Block_03
+    3300006: Apartment_Block_04
+    3300008: Apartment_Block_05
+    3300010: Fire_Escape_01
+    3300012: Fire_Escape_02
+    3300014: Fire_Escape_03
+    3300016: Fire_Escape_04
+    3300018: Fire_Escape_05
+    3300020: Fire_Escape_06
+    3300022: Fish_Chip_Shop
+    3300024: Ground
+    3300026: Hotel
+    3300028: Market
+    3300030: Restaurant
+    3300032: Stage_Plane_01
+    3300034: Stage_Plane_02
+    3300036: Stage_Plane_03
+    3300038: Train_Station
+    4300000: Stage_Plane_01
+    4300002: Stage_Plane_02
+    4300004: Stage_Plane_03
+    4300006: Ground
+    4300008: Apartment_Block_01
+    4300010: Fire_Escape_01
+    4300012: Hotel
+    4300014: Market
+    4300016: Fire_Escape_02
+    4300018: Apartment_Block_02
+    4300020: Apartment_Block_03
+    4300022: Fire_Escape_03
+    4300024: Restaurant
+    4300026: Fish_Chip_Shop
+    4300028: Fire_Escape_04
+    4300030: Apartment_Block_04
+    4300032: Fire_Escape_05
+    4300034: Fire_Escape_06
+    4300036: Apartment_Block_05
+    4300038: Train_Station
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

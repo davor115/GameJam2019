@@ -69,10 +69,6 @@ public class Movement : MonoBehaviour {
 
 
 
- 
-
-
-
     void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.CompareTag("Floor"))

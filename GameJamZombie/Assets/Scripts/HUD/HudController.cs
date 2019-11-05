@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HudController : MonoBehaviour {
     public GameObject Player;
     public GameObject Gun;
-    public Image h_image;
+    public Image health_image;
 
     public TextMeshProUGUI mag_text;
     public TextMeshProUGUI reserve_text;
@@ -21,10 +21,10 @@ public class HudController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update ()
-    {       
+    {
 
         //   h_image.fillAmount = Mathf.Lerp(h_image.fillAmount, Player.GetComponent<Movement>().p_health, Time.deltaTime * 2.0f);
-        h_image.fillAmount = Player.GetComponent<Movement>().p_health / 100.0f;
+        health_image.fillAmount = Player.GetComponent<Movement>().p_health / 100.0f;
 
         mag_text.SetText(Gun.GetComponent<Gun_Controls>().gun_magazine.ToString());
         reserve_text.SetText(Gun.GetComponent<Gun_Controls>().gun_reserve.ToString());

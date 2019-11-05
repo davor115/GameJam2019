@@ -7,8 +7,10 @@ public class EnemyBaseActions : MonoBehaviour {
     GameObject Player;
     public Enemy enemy;
     NavMeshAgent agent;
-
+    EnemyAnimations zombieAnim;
     public bool ImOnScreen;
+    bool isAlive;
+    float dieWait;
 
     public float health;
     public float mov_speed;
@@ -17,7 +19,10 @@ public class EnemyBaseActions : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        isAlive = true;
+        dieWait = 15.0f;
         ImOnScreen = false;
+        zombieAnim = gameObject.GetComponent<EnemyAnimations>();
         Player = GameObject.FindGameObjectWithTag("Player");
         health = enemy.enemy_health;
         mov_speed = enemy.enemy_mov_speed;
@@ -37,10 +42,11 @@ public class EnemyBaseActions : MonoBehaviour {
 
     void Walk()
     {
-        if (Vector3.Distance(Player.transform.position, transform.position) > 1.5f)
+        if (Vector3.Distance(Player.transform.position, transform.position) > 1.5f && health > 0)
         {
             // transform.LookAt(Player.transform);
             // transform.Translate(Vector3.forward * Time.deltaTime * mov_speed);
+            zombieAnim.ZombieWalk();
             StartCoroutine(Check());
             agent.SetDestination(Player.transform.position);
            
@@ -49,7 +55,8 @@ public class EnemyBaseActions : MonoBehaviour {
         {
             if (attack_cooldown <= 0)
             {
-                Player.GetComponent<Movement>().take_damage(15.0f);
+                Player.GetComponent<Movement>().take_damage(5.0f);
+                zombieAnim.ZombieAttack();
                 attack_cooldown = attack_speed;
             }
             agent.ResetPath();
@@ -57,17 +64,31 @@ public class EnemyBaseActions : MonoBehaviour {
         attack_cooldown -= Time.deltaTime;
     }
 
-    public void TakeDamage(float _dmg)
+    public void TakeDamageZombie(float _dmg)
     {
         health -= _dmg;
+       
     }
 
     void checkHealth()
     {
-        if(health <= 0)
+        if(health <= 0 && isAlive)
         {
+            isAlive = false;
             Player.GetComponent<Movement>().killCount += 1;
-            Destroy(this.gameObject);
+            agent.ResetPath();
+            zombieAnim.ZombieDie();
+            this.gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            this.gameObject.GetComponent<NavMeshAgent>().enabled = false;
+            this.gameObject.GetComponent<EnemyBaseActions>().enabled = false;
+            if (dieWait <= 0)
+            {
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                dieWait -= Time.deltaTime;
+            }
         }
     }
 

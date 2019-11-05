@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: NormalZombie
   m_EditorClassIdentifier: 
   enemy_health: 100
-  enemy_mov_speed: 1.5
-  enemy_attack_speed: 1
+  enemy_mov_speed: 0.5
+  enemy_attack_speed: 2.5

@@ -127,7 +127,7 @@ public class Gun_Controls : MonoBehaviour {
                     if(hit.collider.gameObject.GetComponent<EnemyBaseActions>().ImOnScreen)
                     {
                         Instantiate(_BulletPrefab, hit.collider.transform.position, Quaternion.identity);
-                        hit.collider.gameObject.GetComponent<EnemyBaseActions>().TakeDamage(gun_damage);
+                        hit.collider.gameObject.GetComponent<EnemyBaseActions>().TakeDamageZombie(gun_damage);
                     }                   
                 }
             }
