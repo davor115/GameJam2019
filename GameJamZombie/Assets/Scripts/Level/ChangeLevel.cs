@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class ChangeLevel : MonoBehaviour {
 
     GameObject Player;
+    public GameObject _canvas;
+    GameObject train_door;
 
 	// Use this for initialization
 	void Start ()
@@ -27,11 +29,18 @@ public class ChangeLevel : MonoBehaviour {
                 Scene scene = SceneManager.GetActiveScene();
                 if (scene.name == "Hotel")
                 {
-                    SceneManager.LoadScene("City_Level");
+                   // SceneManager.LoadScene("City_Level");
+                    _canvas.GetComponent<FadeScript>().FadeToLevel(1);
                 }
                 else if (scene.name == "City_Level")
                 {
                     //    SceneManager.LoadScene("Train_Station");
+                    _canvas.GetComponent<FadeScript>().FadeToLevel(2);
+                }
+                else if(scene.name == "TrainStation")
+                {
+                    Player.GetComponent<Movement>().enabled = false;
+                    
                 }
             }
         }

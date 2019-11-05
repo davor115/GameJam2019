@@ -38,6 +38,10 @@ public class Enemy_Spawner : MonoBehaviour {
         importantCooldown = 4.0f;
         smallCooldown = 7.0f;
         zombiecount = 24;
+        if(scene.name == "TrainStation")
+        {
+            zombiecount = 2;
+        }
 
         FirstFloor = true;
         SecondFloor = false;
@@ -159,11 +163,14 @@ public class Enemy_Spawner : MonoBehaviour {
         {
             if (importantCooldown <= 0)
             {
-                //   Debug.Log("Spawn!");
-                int rand = Random.Range(0, Main_Spawner.Length);
-                Instantiate(ZombiePrefabs[0], Main_Spawner[rand].transform.position, Quaternion.identity);
-                zombiecount -= 1;
-                importantCooldown = 4.0f;
+                if (Main_Spawner.Length != 0)
+                {
+                    //   Debug.Log("Spawn!");
+                    int rand = Random.Range(0, Main_Spawner.Length);
+                    Instantiate(ZombiePrefabs[0], Main_Spawner[rand].transform.position, Quaternion.identity);
+                    zombiecount -= 1;
+                    importantCooldown = 4.0f;
+                }
             }
             else
             {
@@ -172,11 +179,14 @@ public class Enemy_Spawner : MonoBehaviour {
 
             if (smallCooldown <= 0)
             {
-                //  Debug.Log("Spawn!");
-                int r = Random.Range(0, Small_Spawner.Length);
-                Instantiate(ZombiePrefabs[0], Small_Spawner[r].transform.position, Quaternion.identity);
-                zombiecount -= 1;
-                smallCooldown = 7.0f;
+                if (Small_Spawner.Length != 0)
+                {
+                    //  Debug.Log("Spawn!");
+                    int r = Random.Range(0, Small_Spawner.Length);
+                    Instantiate(ZombiePrefabs[0], Small_Spawner[r].transform.position, Quaternion.identity);
+                    zombiecount -= 1;
+                    smallCooldown = 7.0f;
+                }
             }
             else
             {

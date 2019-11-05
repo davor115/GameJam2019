@@ -1,0 +1,222 @@
+fileFormatVersion: 2
+guid: 513cf4238e8c7fd419fc7b4dc923cb76
+timeCreated: 1572977886
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: FloorPlaceHolder
+    100002: pasted__Train1
+    100004: pasted__TrainCarriage
+    100006: pasted__TrainCarriage2
+    100008: pasted__TrainCarriage3
+    100010: pasted__TrainStationLevel
+    100012: PlaceHolder
+    100014: PlayerPlaceHolder1
+    100016: PlayerPlaceHolder2
+    100018: //RootNode
+    100020: TrainInterior
+    100022: TrainSeat1
+    100024: TrainSeat10
+    100026: TrainSeat11
+    100028: TrainSeat12
+    100030: TrainSeat13
+    100032: TrainSeat14
+    100034: TrainSeat15
+    100036: TrainSeat16
+    100038: TrainSeat17
+    100040: TrainSeat18
+    100042: TrainSeat19
+    100044: TrainSeat2
+    100046: TrainSeat20
+    100048: TrainSeat3
+    100050: TrainSeat4
+    100052: TrainSeat5
+    100054: TrainSeat8
+    100056: TrainSeat9
+    400000: FloorPlaceHolder
+    400002: pasted__Train1
+    400004: pasted__TrainCarriage
+    400006: pasted__TrainCarriage2
+    400008: pasted__TrainCarriage3
+    400010: pasted__TrainStationLevel
+    400012: PlaceHolder
+    400014: PlayerPlaceHolder1
+    400016: PlayerPlaceHolder2
+    400018: //RootNode
+    400020: TrainInterior
+    400022: TrainSeat1
+    400024: TrainSeat10
+    400026: TrainSeat11
+    400028: TrainSeat12
+    400030: TrainSeat13
+    400032: TrainSeat14
+    400034: TrainSeat15
+    400036: TrainSeat16
+    400038: TrainSeat17
+    400040: TrainSeat18
+    400042: TrainSeat19
+    400044: TrainSeat2
+    400046: TrainSeat20
+    400048: TrainSeat3
+    400050: TrainSeat4
+    400052: TrainSeat5
+    400054: TrainSeat8
+    400056: TrainSeat9
+    2100000: Floor
+    2100002: pasted__TrainMat
+    2100004: TrainSeat
+    2100006: lambert1
+    2300000: FloorPlaceHolder
+    2300002: pasted__TrainCarriage
+    2300004: pasted__TrainCarriage2
+    2300006: pasted__TrainCarriage3
+    2300008: PlayerPlaceHolder1
+    2300010: PlayerPlaceHolder2
+    2300012: TrainSeat1
+    2300014: TrainSeat10
+    2300016: TrainSeat11
+    2300018: TrainSeat12
+    2300020: TrainSeat13
+    2300022: TrainSeat14
+    2300024: TrainSeat15
+    2300026: TrainSeat16
+    2300028: TrainSeat17
+    2300030: TrainSeat18
+    2300032: TrainSeat19
+    2300034: TrainSeat2
+    2300036: TrainSeat20
+    2300038: TrainSeat3
+    2300040: TrainSeat4
+    2300042: TrainSeat5
+    2300044: TrainSeat8
+    2300046: TrainSeat9
+    3300000: FloorPlaceHolder
+    3300002: pasted__TrainCarriage
+    3300004: pasted__TrainCarriage2
+    3300006: pasted__TrainCarriage3
+    3300008: PlayerPlaceHolder1
+    3300010: PlayerPlaceHolder2
+    3300012: TrainSeat1
+    3300014: TrainSeat10
+    3300016: TrainSeat11
+    3300018: TrainSeat12
+    3300020: TrainSeat13
+    3300022: TrainSeat14
+    3300024: TrainSeat15
+    3300026: TrainSeat16
+    3300028: TrainSeat17
+    3300030: TrainSeat18
+    3300032: TrainSeat19
+    3300034: TrainSeat2
+    3300036: TrainSeat20
+    3300038: TrainSeat3
+    3300040: TrainSeat4
+    3300042: TrainSeat5
+    3300044: TrainSeat8
+    3300046: TrainSeat9
+    4300000: FloorPlaceHolder
+    4300002: pasted__TrainCarriage
+    4300004: pasted__TrainCarriage2
+    4300006: pasted__TrainCarriage3
+    4300008: TrainSeat1
+    4300010: TrainSeat2
+    4300012: TrainSeat3
+    4300014: TrainSeat4
+    4300016: TrainSeat5
+    4300018: TrainSeat8
+    4300020: TrainSeat9
+    4300022: TrainSeat10
+    4300024: TrainSeat11
+    4300026: TrainSeat12
+    4300028: TrainSeat13
+    4300030: TrainSeat14
+    4300032: TrainSeat15
+    4300034: TrainSeat16
+    4300036: TrainSeat17
+    4300038: TrainSeat18
+    4300040: TrainSeat19
+    4300042: TrainSeat20
+    4300044: PlayerPlaceHolder2
+    4300046: PlayerPlaceHolder1
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

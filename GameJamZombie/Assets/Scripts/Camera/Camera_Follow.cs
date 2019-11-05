@@ -16,6 +16,10 @@ public class Camera_Follow : MonoBehaviour {
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, Player.transform.position.z);
         }
+        else if(scene.name == "TrainStation")
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, Player.transform.position.z);
+        }
         else
         {
             transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + 1f, transform.position.z);
@@ -26,7 +30,7 @@ public class Camera_Follow : MonoBehaviour {
 	void Update ()
     {
         Scene scene = SceneManager.GetActiveScene();
-        if (scene.name == "Hotel")
+        if (scene.name == "Hotel" || scene.name == "TrainStation")
         {
             Cam_FollowPlayer();
         }
@@ -41,7 +45,7 @@ public class Camera_Follow : MonoBehaviour {
        if(changingScene)
         {
             // transform.position = new Vector3(transform.position.x, transform.position.y, Player.transform.position.z);
-            Vector3 move = new Vector3(transform.position.x, Player.transform.position.y + 1f, Player.transform.position.z);
+            Vector3 move = new Vector3(transform.position.x, Player.transform.position.y + 1.5f, Player.transform.position.z);
         
             transform.position = Vector3.MoveTowards(transform.position, move, Time.deltaTime * 3.5f); // Speed of the movement
         }

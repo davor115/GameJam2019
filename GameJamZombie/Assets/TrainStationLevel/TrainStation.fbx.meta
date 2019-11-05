@@ -1,0 +1,235 @@
+fileFormatVersion: 2
+guid: b3643e904ce1567499af8e1fea53f6da
+timeCreated: 1572985448
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bench1
+    100002: Bench2
+    100004: Bench3
+    100006: Bench4
+    100008: Bench5
+    100010: Bench6
+    100012: Bench_5
+    100014: Buildings
+    100016: Door
+    100018: PlayerPlaceHolder
+    100020: PlayerPlaceHolder1
+    100022: Post13
+    100024: Post14
+    100026: Post15
+    100028: Post16
+    100030: Post17
+    100032: Post18
+    100034: Post19
+    100036: Post_High
+    100038: Posts
+    100040: TimeBoard
+    100042: TimeBoard3
+    100044: TimeBoard4
+    100046: Train1
+    100048: TrainCarriage
+    100050: TrainCarriage2
+    100052: TrainCarriage3
+    100054: //RootNode
+    100056: TrainStationLevel
+    100058: VendingMachine1
+    100060: VendingMachine2
+    100062: VendingMachine3
+    400000: Bench1
+    400002: Bench2
+    400004: Bench3
+    400006: Bench4
+    400008: Bench5
+    400010: Bench6
+    400012: Bench_5
+    400014: Buildings
+    400016: Door
+    400018: PlayerPlaceHolder
+    400020: PlayerPlaceHolder1
+    400022: Post13
+    400024: Post14
+    400026: Post15
+    400028: Post16
+    400030: Post17
+    400032: Post18
+    400034: Post19
+    400036: Post_High
+    400038: Posts
+    400040: TimeBoard
+    400042: TimeBoard3
+    400044: TimeBoard4
+    400046: Train1
+    400048: TrainCarriage
+    400050: TrainCarriage2
+    400052: TrainCarriage3
+    400054: //RootNode
+    400056: TrainStationLevel
+    400058: VendingMachine1
+    400060: VendingMachine2
+    400062: VendingMachine3
+    2100000: lambert1
+    2100002: Buildings1
+    2100004: TimeBoard5
+    2100006: Post
+    2100008: Door1
+    2100010: Bench
+    2100012: TrainMat
+    2100014: VendingMachine
+    2300000: Bench1
+    2300002: Bench2
+    2300004: Bench3
+    2300006: Bench4
+    2300008: Bench5
+    2300010: Bench_5
+    2300012: Buildings
+    2300014: Door
+    2300016: PlayerPlaceHolder
+    2300018: PlayerPlaceHolder1
+    2300020: Post13
+    2300022: Post14
+    2300024: Post15
+    2300026: Post16
+    2300028: Post17
+    2300030: Post18
+    2300032: Post19
+    2300034: Post_High
+    2300036: TimeBoard3
+    2300038: TimeBoard4
+    2300040: TrainCarriage
+    2300042: TrainCarriage2
+    2300044: TrainCarriage3
+    2300046: VendingMachine1
+    2300048: VendingMachine2
+    3300000: Bench1
+    3300002: Bench2
+    3300004: Bench3
+    3300006: Bench4
+    3300008: Bench5
+    3300010: Bench_5
+    3300012: Buildings
+    3300014: Door
+    3300016: PlayerPlaceHolder
+    3300018: PlayerPlaceHolder1
+    3300020: Post13
+    3300022: Post14
+    3300024: Post15
+    3300026: Post16
+    3300028: Post17
+    3300030: Post18
+    3300032: Post19
+    3300034: Post_High
+    3300036: TimeBoard3
+    3300038: TimeBoard4
+    3300040: TrainCarriage
+    3300042: TrainCarriage2
+    3300044: TrainCarriage3
+    3300046: VendingMachine1
+    3300048: VendingMachine2
+    4300000: PlayerPlaceHolder
+    4300002: PlayerPlaceHolder1
+    4300004: Buildings
+    4300006: TimeBoard4
+    4300008: TimeBoard3
+    4300010: Post_High
+    4300012: Post13
+    4300014: Post14
+    4300016: Post15
+    4300018: Post16
+    4300020: Post17
+    4300022: Post18
+    4300024: Post19
+    4300026: Door
+    4300028: Bench2
+    4300030: Bench3
+    4300032: Bench4
+    4300034: Bench5
+    4300036: Bench_5
+    4300038: Bench1
+    4300040: TrainCarriage
+    4300042: TrainCarriage2
+    4300044: TrainCarriage3
+    4300046: VendingMachine2
+    4300048: VendingMachine1
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
