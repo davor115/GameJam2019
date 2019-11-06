@@ -61,19 +61,19 @@ public class Movement : MonoBehaviour {
             }
            
 
-            if (transform.rotation.y <= 0.5f && transform.rotation.y >= -0.5f)
-            {
-                Debug.Log("Walking normal");
-                
-                p_anim.WalkBackwards();
+          
+                if (transform.rotation.y <= 0.5f && transform.rotation.y >= -0.5f)
+                {
+                    Debug.Log("Walking normal");
 
-            }
-            else
-            {
-                Debug.Log("Walking backwards");
-                p_anim.Walking();
-            }
-            
+                    p_anim.WalkBackwards();
+
+                }
+                else
+                {
+                    Debug.Log("Walking backwards");
+                    p_anim.Walking();
+                }
             
            
         }
@@ -90,16 +90,35 @@ public class Movement : MonoBehaviour {
                 transform.Translate(transform.right * mov_speed * Time.deltaTime);
             }
 
-            if (transform.rotation.y <= 0.5f && transform.rotation.y >= -0.5f)
+
+            if (scene.name == "Field")
             {
-                p_anim.Walking();
+                if (transform.rotation.y <= 0.5f && transform.rotation.y >= -0.5f)
+                {
+                    p_anim.WalkBackwards();
+
+                }
+                else
+                {
+
+                    p_anim.Walking();
+
+                }
             }
             else
             {
-               
-                p_anim.WalkBackwards();
+                if (transform.rotation.y <= 0.5f && transform.rotation.y >= -0.5f)
+                {
+                    p_anim.Walking();
+                }
+                else
+                {
 
+                    p_anim.WalkBackwards();
+
+                }
             }
+
            
         }
         if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))

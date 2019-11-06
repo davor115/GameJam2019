@@ -38,6 +38,10 @@ public class Camera_Follow : MonoBehaviour {
         {
             City_Cam_Follow();
         }
+        else if(scene.name == "Field")
+        {
+            FieldCamView();
+        }
 	}
 
     void Cam_FollowPlayer()
@@ -56,4 +60,11 @@ public class Camera_Follow : MonoBehaviour {
         Vector3 move = new Vector3(Player.transform.position.x, Player.transform.position.y + 1f, transform.position.z);
         transform.position = Vector3.MoveTowards(transform.position, move, Time.deltaTime * 3.5f); // Speed of the movement
     }
+
+    void FieldCamView()
+    {
+        Vector3 move = new Vector3(Player.transform.position.x, 1, transform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, move, Time.deltaTime * 3.5f); // Speed of the movement
+    }
+
 }

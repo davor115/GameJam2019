@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 public class EnemyBaseActions : MonoBehaviour {
 
     GameObject Player;
@@ -101,7 +102,17 @@ public class EnemyBaseActions : MonoBehaviour {
         {
             ImOnScreen = true;
             //  transform.position = new Vector3(Player.transform.position.x, transform.position.y, transform.position.z); // Allocate so it has the same position.
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(Player.transform.position.x, transform.position.y, transform.position.z), Time.deltaTime * mov_speed);
+            Scene scene = SceneManager.GetActiveScene();
+            if (scene.name == "Field")
+            {
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y, Player.transform.position.z), Time.deltaTime * mov_speed);
+            }
+            else
+            {
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(Player.transform.position.x, transform.position.y, transform.position.z), Time.deltaTime * mov_speed);
+            }
+            
+
         }
         else
         {
