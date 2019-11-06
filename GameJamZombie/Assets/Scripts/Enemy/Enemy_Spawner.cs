@@ -42,6 +42,10 @@ public class Enemy_Spawner : MonoBehaviour {
         {
             zombiecount = 2;
         }
+        else if(scene.name == "trainMoving")
+        {
+            zombiecount = 10;
+        }
 
         FirstFloor = true;
         SecondFloor = false;

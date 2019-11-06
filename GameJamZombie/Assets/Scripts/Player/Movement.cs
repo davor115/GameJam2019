@@ -44,7 +44,7 @@ public class Movement : MonoBehaviour {
     void  Controls()
     {
 
-        Debug.Log("Current Rotation: " + transform.rotation.y);
+      //  Debug.Log("Current Rotation: " + transform.rotation.y);
         if (Input.GetKey(KeyCode.A))
         {
             // Move left
@@ -64,14 +64,14 @@ public class Movement : MonoBehaviour {
           
                 if (transform.rotation.y <= 0.5f && transform.rotation.y >= -0.5f)
                 {
-                    Debug.Log("Walking normal");
+                 //   Debug.Log("Walking normal");
 
                     p_anim.WalkBackwards();
 
                 }
                 else
                 {
-                    Debug.Log("Walking backwards");
+                   // Debug.Log("Walking backwards");
                     p_anim.Walking();
                 }
             

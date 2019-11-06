@@ -30,7 +30,7 @@ public class Camera_Follow : MonoBehaviour {
 	void Update ()
     {
         Scene scene = SceneManager.GetActiveScene();
-        if (scene.name == "Hotel" || scene.name == "TrainStation")
+        if (scene.name == "Hotel" || scene.name == "TrainStation" )
         {
             Cam_FollowPlayer();
         }
@@ -41,6 +41,10 @@ public class Camera_Follow : MonoBehaviour {
         else if(scene.name == "Field")
         {
             FieldCamView();
+        }
+        else if(scene.name == "trainMoving")
+        {
+            TrainMovingView();
         }
 	}
 
@@ -64,6 +68,13 @@ public class Camera_Follow : MonoBehaviour {
     void FieldCamView()
     {
         Vector3 move = new Vector3(Player.transform.position.x, 1, transform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, move, Time.deltaTime * 3.5f); // Speed of the movement
+    }
+
+    void TrainMovingView()
+    {
+        Vector3 move = new Vector3(transform.position.x, 1.974f, Player.transform.position.z);
+
         transform.position = Vector3.MoveTowards(transform.position, move, Time.deltaTime * 3.5f); // Speed of the movement
     }
 
