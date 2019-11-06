@@ -7,6 +7,7 @@ public class Hotel_Segments : MonoBehaviour {
     Enemy_Spawner enemy_spawner;
     GameObject p;
     GameObject _worldScripts;
+   
 	// Use this for initialization
 	void Start ()
     {
@@ -32,6 +33,7 @@ public class Hotel_Segments : MonoBehaviour {
                 Camera.main.GetComponent<Camera_Follow>().changingScene = true;
                 gameObject.transform.position = GameObject.Find("goTo_2").transform.position;
                 transform.rotation = GameObject.Find("goTo_2").transform.rotation;
+                p.GetComponent<Movement>().killCount = 0;
                 
             }
         }
@@ -45,17 +47,11 @@ public class Hotel_Segments : MonoBehaviour {
                 Camera.main.GetComponent<Camera_Follow>().changingScene = true;
                 gameObject.transform.position = GameObject.Find("goTo_3").transform.position;
                 transform.rotation = GameObject.Find("goTo_3").transform.rotation;
+                p.GetComponent<Movement>().killCount = 0;
 
             }
         }
-        else if(other.gameObject.name == "Stage_Finished_3")
-        {
-            // Play exiting the building animation, Fade out, load next scene.
-            if(p.GetComponent<Movement>().killCount >= 24)
-            {
-                // Load new Scene.
-            }
-        }
+       
     }
 
 
