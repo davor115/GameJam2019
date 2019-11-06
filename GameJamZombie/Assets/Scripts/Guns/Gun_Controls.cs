@@ -60,7 +60,7 @@ public class Gun_Controls : MonoBehaviour {
     {
         // Generate a plane that intersects the transform's position with an right normal.
         Scene scene = SceneManager.GetActiveScene();
-        if (scene.name == "Hotel" || scene.name == "TrainStation")
+        if (scene.name == "Hotel" || scene.name == "TrainStation" || scene.name == "trainMoving")
         {
             playerPlane = new Plane(Vector3.right, transform.position);
         }      

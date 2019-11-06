@@ -20,6 +20,10 @@ public class Camera_Follow : MonoBehaviour {
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, Player.transform.position.z);
         }
+        else if(scene.name == "trainMoving")
+        {
+            transform.position = new Vector3(transform.position.x, 1.974f, Player.transform.position.z);
+        }
         else
         {
             transform.position = new Vector3(Player.transform.position.x, Player.transform.position.y + 1f, transform.position.z);

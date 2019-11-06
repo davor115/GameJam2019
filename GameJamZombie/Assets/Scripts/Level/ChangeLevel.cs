@@ -72,7 +72,13 @@ public class ChangeLevel : MonoBehaviour {
                     if (Player.GetComponent<NavMeshAgent>().remainingDistance < 1.5f)
                     {
                         Debug.Log("Finished Game");
+                        _canvas.GetComponent<FadeScript>().FadeToLevel(5);
                     }
+                }
+                else if(scene.name == "trainMoving")
+                {
+                    Player.GetComponent<Movement>().killCount = 0;
+                    _canvas.GetComponent<FadeScript>().FadeToLevel(4);
                 }
             }
            

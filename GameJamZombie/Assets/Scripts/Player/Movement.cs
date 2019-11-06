@@ -49,7 +49,7 @@ public class Movement : MonoBehaviour {
         {
             // Move left
             Scene scene = SceneManager.GetActiveScene();
-            if (scene.name == "Hotel" || scene.name == "TrainStation")
+            if (scene.name == "Hotel" || scene.name == "TrainStation" || scene.name == "trainMoving")
             {
                 transform.Translate(-transform.forward * mov_speed * Time.deltaTime);
                
@@ -81,7 +81,7 @@ public class Movement : MonoBehaviour {
         {
             // Move right
             Scene scene = SceneManager.GetActiveScene();
-            if (scene.name == "Hotel" || scene.name == "TrainStation")
+            if (scene.name == "Hotel" || scene.name == "TrainStation" || scene.name == "trainMoving")
             {
                 transform.Translate(transform.forward * mov_speed * Time.deltaTime);
             }
