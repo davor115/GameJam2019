@@ -6,9 +6,10 @@ using UnityEngine.AI;
 public class ChangeLevel : MonoBehaviour {
 
     GameObject Player;
+    public GameObject allMightyWall;
     public GameObject _canvas;
     GameObject train_door;
-    GameObject final_Destination;
+    public GameObject final_Destination;
     GameObject Train_DoubleDoor;
     GameObject LookAt_Train;
     float WaitForAnimTrain;
@@ -31,7 +32,8 @@ public class ChangeLevel : MonoBehaviour {
     {
        if(isActive)
         {
-            _canvas.GetComponent<FadeScript>().FadeToLevel(3);
+            _canvas.GetComponent<FadeScript>().FadeToLevel(4);
+            isActive = false;
         }
     }
 
@@ -46,42 +48,46 @@ public class ChangeLevel : MonoBehaviour {
                 {
                     // SceneManager.LoadScene("City_Level");
                     Player.GetComponent<Movement>().killCount = 0;
-                    _canvas.GetComponent<FadeScript>().FadeToLevel(1);
+                    _canvas.GetComponent<FadeScript>().FadeToLevel(2);
                     
                 }
                 else if (scene.name == "City_Level")
                 {
                     //    SceneManager.LoadScene("Train_Station");
                     Player.GetComponent<Movement>().killCount = 0;
-                    _canvas.GetComponent<FadeScript>().FadeToLevel(2);
+                    _canvas.GetComponent<FadeScript>().FadeToLevel(3);
                 }               
                 else if (scene.name == "Field")
                 {
                     Player.GetComponent<Movement>().enabled = false;
                     Player.GetComponentInChildren<Gun_Controls>().enabled = false;
+                    allMightyWall.GetComponent<BoxCollider>().enabled = false;
                     Player.transform.LookAt(final_Destination.transform);
+                  //  Player.transform.Translate(transform.forward);
                     Player.AddComponent<NavMeshAgent>();
                     Player.GetComponent<NavMeshAgent>().baseOffset = 0.9f;
-                    Player.GetComponent<NavMeshAgent>().speed = 1;
+                    Player.GetComponent<NavMeshAgent>().speed = 1.5f;
                     Player.GetComponent<NavMeshAgent>().height = 1.5f;
                     Player.GetComponent<NavMeshAgent>().radius = 0.5f;
 
+                    Player.GetComponent<PlayerAnimations>().Walking();
 
-
-                    Player.GetComponent<NavMeshAgent>().SetDestination(final_Destination.transform.position);
-                    if (Player.GetComponent<NavMeshAgent>().remainingDistance < 1.5f)
+                   Player.GetComponent<NavMeshAgent>().SetDestination(final_Destination.transform.position);
+                    if (Player.GetComponent<NavMeshAgent>().remainingDistance <= 1.5f)
                     {
                         Debug.Log("Finished Game");
-                        _canvas.GetComponent<FadeScript>().FadeToLevel(5);
+                        _canvas.GetComponent<FadeScript>().FadeToLevel(6);
                     }
                 }
-                else if(scene.name == "trainMoving")
-                {
-                    Player.GetComponent<Movement>().killCount = 0;
-                    _canvas.GetComponent<FadeScript>().FadeToLevel(4);
-                }
+                
             }
-           
+            else if (scene.name == "trainMoving")
+            {
+                Debug.Log("Teleport to next map.");
+                Player.GetComponent<Movement>().killCount = 0;
+                _canvas.GetComponent<FadeScript>().FadeToLevel(5);
+            }
+
         }
     }
 
@@ -91,7 +97,7 @@ public class ChangeLevel : MonoBehaviour {
         if(other.gameObject.CompareTag("Player"))
         {
             Scene scene = SceneManager.GetActiveScene();
-            if (scene.name == "TrainStation" && Player.GetComponent<Movement>().killCount == 2)
+            if (scene.name == "TrainStation")
             {
                 Player.GetComponent<Movement>().enabled = false;
                 Player.GetComponentInChildren<Gun_Controls>().enabled = false;

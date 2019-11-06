@@ -811,7 +811,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1246104194569614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.05, y: 9.18, z: 2.191}
+  m_LocalPosition: {x: 2.1929731, y: 9.18, z: 2.0684223}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4493809282876206}
@@ -1233,9 +1233,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_audioClip: {fileID: 8300000, guid: fd86ccd0c0f0a1045b5077b1e156443e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1349,6 +1349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b0a6e2a91d156b419c446e48c6ce455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canvas: {fileID: 0}
   playerClass: {fileID: 11400000, guid: aee5d6ff336f7e0489d6df2a3f75a895, type: 2}
   allColliders: []
   LayerMask:
@@ -1384,6 +1385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753080caaaef10e4c82f66a91556b49d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ShootSoundEffect: {fileID: 8300000, guid: 117875bfcfa1d6d4587f23995fc29d1b, type: 3}
   LayerMask:
     serializedVersion: 2
     m_Bits: 4294967291

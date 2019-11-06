@@ -6,8 +6,8 @@ public class ZombieSounds : MonoBehaviour {
 
 	public AudioClip zombieMoan;
 	AudioSource audio;
-	float MinWaitTime = 30.0f;
-	float MaxWaitTime = 60.0f;
+	float MinWaitTime = 10.0f;
+	float MaxWaitTime = 50.0f;
 	float Rand;
 	bool isActive;
 	// Use this for initialization
@@ -20,25 +20,29 @@ public class ZombieSounds : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (isActive == false) 
-		{
-			Rand = Random.Range(MinWaitTime, MaxWaitTime);
-			isActive = true;
-		}
+        if (gameObject.GetComponent<EnemyBaseActions>().isAlive)
+        {
+            if (isActive == false)
+            {
+                Rand = Random.Range(MinWaitTime, MaxWaitTime);
+                isActive = true;
+            }
 
-		if (isActive) {
-			if (Rand <= 0) 
-			{
-			//	AudioSource.PlayClipAtPoint (zombieMoan, transform.position);
-				audio.clip = zombieMoan;
-				audio.Play ();
-				isActive = false;
-			} 
-			else 
-			{
-				Rand -= Time.deltaTime;
-			}
-		}
+            if (isActive)
+            {
+                if (Rand <= 0)
+                {
+                    //	AudioSource.PlayClipAtPoint (zombieMoan, transform.position);
+                    audio.clip = zombieMoan;
+                    audio.Play();
+                    isActive = false;
+                }
+                else
+                {
+                    Rand -= Time.deltaTime;
+                }
+            }
+        }
 	}
 
 

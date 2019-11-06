@@ -1,14 +1,11 @@
 fileFormatVersion: 2
-guid: 753080caaaef10e4c82f66a91556b49d
-timeCreated: 1572880443
+guid: 110ab15d20330f647999542c812b6f4f
+timeCreated: 1573007943
 licenseType: Pro
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - _ShootSoundEffect: {instanceID: 0}
-  - pickedGun: {instanceID: 0}
-  - _BulletPrefab: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   gun_name: USP
-  gun_magazine: 25
-  gun_reserve: 150
+  gun_magazine: 50
+  gun_reserve: 250
   gun_damage: 45
   gun_fireRate: 0.2

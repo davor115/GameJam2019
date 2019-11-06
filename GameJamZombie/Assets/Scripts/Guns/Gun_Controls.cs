@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Gun_Controls : MonoBehaviour {
 
+    public AudioClip _ShootSoundEffect;
+
     GameObject Player;
     float currentHitDistance;
     public LayerMask LayerMask;
@@ -22,14 +24,19 @@ public class Gun_Controls : MonoBehaviour {
     public int gun_magazine;
     public int gun_reserve;
     float gun_damage;
+
+    void Awake()
+    {
+        gun_magazine = pickedGun.gun_magazine;
+        gun_reserve = pickedGun.gun_reserve;
+    }
     void Start()
     {
         speed = 10.0f;
         Player = GameObject.FindGameObjectWithTag("Player");
         // If Pistol:
         gun_fireRate = pickedGun.gun_fireRate;
-        gun_magazine = pickedGun.gun_magazine;
-        gun_reserve = pickedGun.gun_reserve;
+        
         gun_damage = pickedGun.gun_damage;
 
         gun_cooldown = gun_fireRate;
@@ -123,7 +130,7 @@ public class Gun_Controls : MonoBehaviour {
         if (gun_magazine > 0)
         {
             Ray myRay = new Ray(transform.position, transform.forward);
-
+            AudioSource.PlayClipAtPoint(_ShootSoundEffect, transform.position, 0.9f);
             RaycastHit hit;
             // Physics.SphereCast(transform.position, 2.5f, transform.forward, out hit, 30.0f)
             if (Physics.Raycast(myRay, out hit, 15.0f, LayerMask))

@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Movement : MonoBehaviour {
 
+    float stepTimer;
+
+    public GameObject _canvas;
+    bool isAlive;
+    float WaitDeath;
     public Player playerClass;
     PlayerAnimations p_anim;
     Rigidbody p_rigidbody;
@@ -20,16 +25,27 @@ public class Movement : MonoBehaviour {
     bool isOnGround;
     public float p_health;
     public int killCount;
+
+    void Awake()
+    {
+        p_health = playerClass.player_health;
+    }
+
+
 	// Use this for initialization
 	void Start ()
     {
+        isAlive = true;
+        WaitDeath = 4.0f;
+        stepTimer = 0.65f;
+        _canvas = GameObject.Find("LevelChanger");
         Camera.main.GetComponent<Camera_Follow>().changingScene = true;
         // Get components:
         p_rigidbody = this.gameObject.GetComponent<Rigidbody>();
         p_anim = this.gameObject.GetComponent<PlayerAnimations>();
         // Initialize stats:
         mov_speed = playerClass.player_mov_speed; // make = GetClass().GetSpeed(); Later..
-        p_health = playerClass.player_health;        
+              
         mov_jumpDistance = 2.5f - playerClass.player_weight; // make = GetClass().GetJumpDistance();
         killCount = 0;
     }
@@ -38,8 +54,9 @@ public class Movement : MonoBehaviour {
 	void Update ()
     {
         Controls();
+        PlayerCheckHealth();
 
-	}
+    }
 
     void  Controls()
     {
@@ -48,6 +65,15 @@ public class Movement : MonoBehaviour {
         if (Input.GetKey(KeyCode.A))
         {
             // Move left
+            if (!this.GetComponent<AudioSource>().isPlaying && stepTimer <= 0)
+            {
+                this.GetComponent<AudioSource>().Play();
+                stepTimer = 0.65f;
+            }
+            else
+            {
+                stepTimer -= Time.deltaTime;
+            }
             Scene scene = SceneManager.GetActiveScene();
             if (scene.name == "Hotel" || scene.name == "TrainStation" || scene.name == "trainMoving")
             {
@@ -79,6 +105,16 @@ public class Movement : MonoBehaviour {
         }
         if(Input.GetKey(KeyCode.D))
         {
+            if (!this.GetComponent<AudioSource>().isPlaying && stepTimer <= 0)
+            {
+                this.GetComponent<AudioSource>().Play();
+                stepTimer = 0.65f;
+            }
+            else
+            {
+                stepTimer -= Time.deltaTime;
+            }
+             
             // Move right
             Scene scene = SceneManager.GetActiveScene();
             if (scene.name == "Hotel" || scene.name == "TrainStation" || scene.name == "trainMoving")
@@ -124,6 +160,7 @@ public class Movement : MonoBehaviour {
         if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
             p_anim.Idle();
+            this.GetComponent<AudioSource>().Stop();
         }
         //if((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && isOnGround) // && isOnGround
         //{
@@ -170,6 +207,26 @@ public class Movement : MonoBehaviour {
     public void take_damage(float _dmg)
     {
         p_health -= _dmg;
+        p_anim.isHit();
+    }
+
+    void PlayerCheckHealth()
+    {
+        if(p_health <= 0)
+        {
+            
+            p_anim.Die();
+            
+            if (isAlive && WaitDeath <= 0)
+            {
+                _canvas.GetComponent<FadeScript>().FadeToLevel(6);
+                isAlive = false;
+            }
+            else
+            {
+                WaitDeath -= Time.deltaTime;
+            }
+        }
     }
 
 

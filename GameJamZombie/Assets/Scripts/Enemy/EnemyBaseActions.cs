@@ -10,7 +10,7 @@ public class EnemyBaseActions : MonoBehaviour {
     NavMeshAgent agent;
     EnemyAnimations zombieAnim;
     public bool ImOnScreen;
-    bool isAlive;
+    public bool isAlive;
     float dieWait;
 
     public float health;
@@ -103,7 +103,7 @@ public class EnemyBaseActions : MonoBehaviour {
             ImOnScreen = true;
             //  transform.position = new Vector3(Player.transform.position.x, transform.position.y, transform.position.z); // Allocate so it has the same position.
             Scene scene = SceneManager.GetActiveScene();
-            if (scene.name == "Field")
+            if (scene.name == "Field" || scene.name == "City_Level")
             {
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(transform.position.x, transform.position.y, Player.transform.position.z), Time.deltaTime * mov_speed);
             }

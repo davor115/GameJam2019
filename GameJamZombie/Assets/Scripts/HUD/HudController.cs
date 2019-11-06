@@ -15,8 +15,8 @@ public class HudController : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
-        Gun = GameObject.FindGameObjectWithTag("Gun");
+       // Player = GameObject.FindGameObjectWithTag("Player");
+      //  Gun = GameObject.FindGameObjectWithTag("Gun");
     }
 	
 	// Update is called once per frame

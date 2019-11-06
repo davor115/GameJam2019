@@ -23,6 +23,10 @@ public class PlayerAnimations : MonoBehaviour {
     public void Die()
     {
         anim.SetBool("isDead", true);
+        anim.SetBool("isWalking", false);
+        anim.SetBool("isWalkingBackwards", false);
+        anim.SetBool("isHit", false);
+        anim.SetBool("isIdle", false);
         // End game.
     }
 
@@ -46,7 +50,11 @@ public class PlayerAnimations : MonoBehaviour {
     public void isHit()
     {
         anim.SetBool("isHit", true);
-        anim.SetBool("isHit", false); // Maybe it will get hit and then go idle?
+        anim.SetBool("isWalkingBackwards", false);
+        anim.SetBool("isWalking", false);
+        anim.SetBool("isHit", false);
+        anim.SetBool("isIdle", false);
+        
     }
 
     public void Idle()
@@ -54,7 +62,7 @@ public class PlayerAnimations : MonoBehaviour {
         anim.SetBool("isIdle", true);
         anim.SetBool("isWalking", false);
         anim.SetBool("isWalkingBackwards", false);
-        anim.SetBool("isHit", false);
+        
     }
 
 

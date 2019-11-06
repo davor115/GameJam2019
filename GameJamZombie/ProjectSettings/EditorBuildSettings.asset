@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Level/MainMenu.unity
+    guid: a9d720eb93f32924384774af18b9eed1
+  - enabled: 1
     path: Assets/Level/Hotel/Hotel.unity
     guid: 39cbf91983f96614b867f44432c96a0a
   - enabled: 1
